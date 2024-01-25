@@ -1,0 +1,18 @@
+ERD
+
+user => id,name,email,password,
+expense => id,title,amount,currency,categoryId,notes,date,userId
+category=> id,name
+
+income => id,title,amount,currency,sourceId,date,notes,userId
+source => id,name
+
+budget=> id,limit,category,budgetType,userId
+
+report=> id,start_date,end_date,totalExpense,totalIncome,netBalance,userId
+
+user => expense =one to many
+user => income = one to many
+user => budget = one to many 
+income => source => one to one
+expense => category => one to one
